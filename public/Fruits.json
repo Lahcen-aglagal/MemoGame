@@ -1,0 +1,67 @@
+[
+    {
+      "name": "Apple",
+      "path": "./src/data/Icons/Apple.png"
+    },
+    {
+      "name": "Banana",
+      "path": "./src/data/Icons/Banana.png"
+    },
+    {
+      "name": "Cherry",
+      "path": "./src/data/Icons/cherry.png"
+    },
+    {
+      "name": "Dragonfruit",
+      "path": "./src/data/Icons/Dragonfruit.png"
+    },
+    {
+      "name": "Grapes",
+      "path": "./src/data/Icons/Grapes.png"
+    },
+    {
+      "name": "Green Lime",
+      "path": "./src/data/Icons/GreenLime.png"
+    },
+    {
+      "name": "Mango",
+      "path": "./src/data/Icons/Mango.png"
+    },
+    {
+      "name": "Melon",
+      "path": "./src/data/Icons/Melon.png"
+    },
+    {
+      "name": "Orange",
+      "path": "./src/data/Icons/Orange.png"
+    },
+    {
+      "name": "Peach",
+      "path": "./src/data/Icons/Peach.png"
+    },
+    {
+      "name": "Pear",
+      "path": "./src/data/Icons/Pear.png"
+    },
+    {
+      "name": "Pineapple",
+      "path": "./src/data/Icons/Pineapple.png"
+    },
+    {
+      "name": "Starfruit",
+      "path": "./src/data/Icons/Starfruit.png"
+    },
+    {
+      "name": "Strawberries",
+      "path": "./src/data/Icons/Strawberries.png"
+    },
+    {
+      "name": "Watermelon",
+      "path": "./src/data/Icons/Watermelon.png"
+    },
+    {
+      "name": "Yellow Pear",
+      "path": "./src/data/Icons/YellowPear.png"
+    }
+  ]
+  
