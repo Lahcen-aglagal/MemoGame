@@ -1,3 +1,15 @@
+/**
+ * @file MainContainer.jsx is the file responsible for the MainContainer component.
+ * @name MainContainer.jsx
+ * @class MainContainer
+ * @requires React, PropTypes, useGameContext, GlitchButton
+ * @exports MainContainer
+ * @function
+ * @version 0.1.0
+ * @author LAHCEN AGLAGAL <https://github.com/Lahcen-aglagal>
+ * @license MIT
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from './MainContainer.module.css';

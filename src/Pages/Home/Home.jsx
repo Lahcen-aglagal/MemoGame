@@ -1,3 +1,17 @@
+/**
+ * @File: Home.jsx
+ * @Author: LAHCEN AGLAGAL <https://github.com/Lahcen-aglagal>
+ * Description: This component represents the main game screen for a memory card matching game.
+ *              It includes functionality for shuffling cards, tracking moves, and managing game state.
+ * Dependencies:
+ *  - React, useState, useEffect, useCallback
+ *  - react-toastify for notifications
+ *  - Tailwind CSS for styling
+ * Created: January 2025
+ * Last Updated: January 2025
+ * Version: 1.0.0
+ */
+
 import { useState, useCallback, useEffect } from 'react';
 import { MainContainer } from '../../components';
 import classes from './Home.module.css';
@@ -45,7 +59,12 @@ const Home = () => {
   const [initialReveal, setInitialReveal] = useState(true);
 
   const shuffleArray = (array) => {
-    return array.sort(() => Math.random() - 0.5);
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
   };
 
   useEffect(() => {
@@ -62,7 +81,7 @@ const Home = () => {
   useEffect(() => {
     const cardnumber = cardCount / 2;
     if (allData.length >= cardnumber) {
-      const shuffledData = shuffleArray([...allData]);
+      const shuffledData =shuffleArray( [...allData]);
       const slicedData = shuffledData.slice(0, cardnumber);
       setData([...slicedData, ...slicedData]);
     } else {
@@ -126,27 +145,28 @@ const Home = () => {
   }, [loading, error]);
 
   useEffect(() => {
-    if (initialReveal && data.length > 0) {
-      // Flip all cards initially
-      const initialFlippedCards = data.reduce((acc, _, index) => {
-        acc[index] = true;
-        return acc;
-      }, {});
-      
-      setFlippedCards(initialFlippedCards);
-      const timer = setTimeout(() => {
-        setFlippedCards({});
-        setInitialReveal(false);
-      }, 3000);
 
-      return () => clearTimeout(timer);
-    }
+      if (initialReveal && data.length > 0) {
+        const initialFlippedCards = data.reduce((acc, _, index) => {
+          acc[index] = true;
+          return acc;
+        }, {});
+
+        setFlippedCards(initialFlippedCards);
+        const timer = setTimeout(() => {
+          setFlippedCards({});
+          setInitialReveal(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+      } 
+    setFlippedCards({});
+
   }, [data, initialReveal]);
 
   const createHandleClick = useCallback(
     (index, name) => {
       return (e) => {
-
         if (initialReveal) return;
         e.preventDefault();
         if (!isGameStarted) {
@@ -205,7 +225,14 @@ const Home = () => {
         }
       };
     },
-    [flippedCards, selectedCards, isGameStarted, moves, time, matchedPairs, cardCount]
+    [
+      flippedCards,
+       selectedCards,
+       isGameStarted,
+       moves,
+       time,
+       matchedPairs,
+       cardCount]
   );
 
   return (

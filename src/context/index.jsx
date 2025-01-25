@@ -1,4 +1,13 @@
-// GameContext.jsx
+/**
+ * @file index.jsx
+ * @module ContextAPI
+ * @version 1.0.0
+ * @description This module provides the GameProvider component, which is a context provider for managing game state.
+ * @requires react, createContext, useContext, useEffect, useReducer, useMemo
+ * @requires PropTypes
+ * @requires ApiCall
+ */
+
 import React, { useState, createContext, useContext, useEffect , useReducer , useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { ApiCall } from '../Utils';

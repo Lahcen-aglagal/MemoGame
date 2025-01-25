@@ -1,3 +1,16 @@
+/**
+ * File: Config.jsx
+ * Author: LAHCEN AGLAGAL
+ * Description: This component represents the configuration panel for the memory card matching game.
+ *             It includes options for changing the sidenav color, card count, dark mode, and sidebar direction.
+ * Dependencies:
+ * - React, useState, useEffect
+ * - PropTypes for typechecking
+ * - useGameContext from the context API
+ * Created: January 2025
+ * Last Updated: January 2025
+ * Version: 1.0.0
+ * */
 import React, { useState, useEffect } from 'react';
 import { setBgGameColor, useGameContext } from '../../context/index.jsx';
 import PropTypes from 'prop-types';
@@ -37,7 +50,7 @@ const Config = ({ children , restartGame }) => {
   const CardCountOptions = [4, 16 , 32];
 
   useEffect(() => {
-    openConfigurator ? setOpenClass(direction === "left" ? "translate-x-5" : "-translate-x-3") : setOpenClass('');
+    openConfigurator ? setOpenClass(direction === "left" ? "translate-x-5" : "-translate-x-5") : setOpenClass('');
   }, [openConfigurator, direction]);
 
   return (
