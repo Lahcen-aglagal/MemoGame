@@ -1,0 +1,8 @@
+.dark {
+    /* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
+    @apply bg-gradient-to-r from-gray-500 to-black backdrop-blur-sm
+  }
+  .light {
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+  }
+  

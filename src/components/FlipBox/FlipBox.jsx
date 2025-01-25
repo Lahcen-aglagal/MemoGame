@@ -7,12 +7,17 @@ const FlipBox = ({
     Front, 
     ClassFront,
     ClassBack, 
-    handleClick, 
-    isFlipped,
-    flipDirection 
+    handleClick , 
+    isFlipped ,
+    flipDirection
 }) => {
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection={flipDirection}>
+      <div 
+        onClick={handleClick} 
+        className={ClassBack} 
+        style={{height: '7em', width: '7em'}}
+      />
       <div 
         onClick={handleClick} 
         className={ClassFront} 
@@ -20,11 +25,6 @@ const FlipBox = ({
       >
         {Front}
       </div>
-      <div 
-        onClick={handleClick} 
-        className={ClassBack} 
-        style={{height: '7em', width: '7em'}}
-      />
     </ReactCardFlip>
   )
 }

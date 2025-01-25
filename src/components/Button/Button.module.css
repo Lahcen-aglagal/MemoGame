@@ -1,0 +1,74 @@
+.GlitchButton {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    background: #111827;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .GlitchButton::before,
+  .GlitchButton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    border-radius: 0.5rem;
+    transition: opacity 0.3s ease;
+  }
+  
+  .GlitchButton::before {
+    background: rgba(239, 68, 68, 0.5); /* red */
+    animation: glitch-1 0.4s infinite;
+    animation-play-state: paused;
+  }
+  
+  .GlitchButton::after {
+    background: rgba(34, 211, 238, 0.5); /* cyan */
+    animation: glitch-2 0.4s infinite;
+    animation-play-state: paused;
+  }
+  
+  .GlitchButton:hover::before,
+  .GlitchButton:hover::after {
+    opacity: 1;
+  }
+  
+  .GlitchButton:hover::before,
+  .GlitchButton:hover::after {
+    animation-play-state: running;
+  }
+  
+  .GlitchButton span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Glitch animations */
+  @keyframes glitch-1 {
+    0% { transform: translate(0); }
+    33% { transform: translate(-5px, 3px); }
+    66% { transform: translate(5px, -3px); }
+    100% { transform: translate(0); }
+  }
+  
+  @keyframes glitch-2 {
+    0% { transform: translate(0); }
+    33% { transform: translate(5px, -3px); }
+    66% { transform: translate(-5px, 3px); }
+    100% { transform: translate(0); }
+  }
+  
+  /* Button outline glow */
+  .GlitchButton {
+    box-shadow: 0 0 0 2px white;
+  }
+  
+  .GlitchButton:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(255, 255, 255, 0.5);
+  }

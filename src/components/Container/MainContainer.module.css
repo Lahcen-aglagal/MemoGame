@@ -1,16 +1,27 @@
 .Container {
-    display: flex;
-    margin: 0 auto;
     max-width: 1200px;
-
-    /* border: 1px solid black; */
+    margin: 0 auto;
     width: fit-content;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    /* PUT 4 ITEM IN ROW: */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
-    background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+    /* background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%); */
+    display: grid;
+    gap: 10px;
+    padding: 10px;
 }
+
+.Spacer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .Text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;    
+  }
